@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="home.css"> -->
+    <title>Document</title>
+</head>
+<style>
+    body{
+        padding: 0;
+        margin: 0;
+    }
+@media screen and (max-width:1023px)
+{
+    .main{
+        position: relative;
+        border: 1px solid rgba(45,55,65,0.4);
+        box-shadow: inset 1px 1px 3px rgba(45,55,65,0.4),
+                    inset -1px -1px 3px rgba(45,55,65,0.4);
+        width:fit-content;
+        height: auto;
+        padding:15px;
+        display: block;
+        margin:20px auto;
+    }
+    .main h1{
+        font-size:5.2vw;
+        text-align: center;
+        margin:0px auto 20px auto;
+    }
+    .main i{
+        font-size:4vw;
+        font-weight: lighter;
+    }
+    .main input{
+        margin-left:65px;
+    }
+    .main button{
+        display: block;
+        border:none;
+        margin: 5px auto;
+        padding:6px 12px;
+        font-size:4vw;
+        font-weight:bolder;
+        width:fit-content;
+        height: auto;
+        background-color:rgba(45,55,65,0.2);
+    }
+    .main button:active{
+        background-color:rgba(45,55,65,1);
+        color: white;
+    }
+}
+
+@media screen and (min-width:1024px)
+{
+    .main{
+        position: relative;
+        border: 1px solid rgba(45,55,65,0.4);
+        box-shadow: inset 1px 1px 3px rgba(45,55,65,0.4),
+                    inset -1px -1px 3px rgba(45,55,65,0.4);
+        width: fit-content;
+        height: auto;
+        padding:15px;
+        display: block;
+        margin:20px auto;
+    }
+    .main h1{
+        font-size:3vw;
+        text-align: center;
+        margin:5px auto 35px auto;
+    }
+    .main i{
+        font-size:2vw;
+        font-weight: lighter;
+    }
+    .main input{
+        margin-left:70px;
+    }
+    .main button{
+        display: block;
+        border:none;
+        margin: 1px auto;
+        padding:5px 10px;
+        font-size:1.8vw;
+        font-weight:bolder;
+        width:fit-content;
+        height: auto;
+        background-color:rgba(45,55,65,0.2);
+    }
+    .main button:active{
+        background-color:rgba(45,55,65,1);
+        color: white;
+    }
+}
+</style>
+<body>
+    <center>
+    <div class="main">
+        <h1>Face detection<br><i>(ML+Django)</i><hr></h1>
+        <form action="result" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+        <input type="file" id="image" class="image" name="image" />
+            <br><br>
+            <button type="submit">submit</button>
+        </form>
+    </div>
+    </center>
+</body>
+
+</html>
